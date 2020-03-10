@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+
+    <title>ChatGroup</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <style>
+    
+    body{
+        background-color: ghostwhite;
+    }
+    .round-box {
+      position: relative;
+      padding: 45px 15px 15px;
+      border-color: #e5e5e5 #eee #eee;
+      border-style: solid;
+      border-width: 1px 0;
+      -webkit-box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+      box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+    }
+    #result-panel {
+      visibility: hidden;
+    }
+    #result {
+      font-size: 50px;
+      text-align:center;
+    }
+    tr.bmi1 td {
+      background: #e2f53c;
+      color: #fff;
+    }
+    tr.bmi2 td {
+      background: #09d802;
+      color: #fff;
+    }
+    tr.bmi3 td {
+      background: #fcdd32;
+      color: #fff;
+    }
+    tr.bmi4 td {
+      background: #eeb702;
+      color: #fff;
+    }
+    tr.bmi5 td {
+      background: #ee1d02;
+      color: #fff;
+    }
+    </style>
+  </head>
+
+  <body onload="ClickImg()">
+    
+    <div class="container">
+      
+      <div class="jumbotron ">
+        <h2 align='center' >CHAT GROUP</h2>
+        <p align='center'>วิเคราะห์บทสนทนา ว่าบทสนทนาจะอยู่ในกลุ่มใด => soc.religion.christian , sci.space , comp.graphics</p>
+        
+      </div>
+
+      <div class="row">
+        <div class="round-box col-sm-12 col-sm-offset-0">
+
+            <div class="container">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <div class="form-group" >
+                        <h3>TEXT</h3>
+                        <textarea class="form-control" rows="4" name="group" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">CHECK</button>
+                    <h1>{{ label }}</h1>
+                </form>
+            </div>
+
+        </div>
+
+      </div><!-- /row -->
+    </div> <!-- /container -->
+
+  </body>
+</html>
